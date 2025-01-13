@@ -15,7 +15,7 @@ Saga Music App is a modern music application that allows users to explore, liste
 **Frontend**: React, CSS
 **Backend**: Node.js, Express.js
 **Database**: MongoDB
-**API**: Deezer API for song data
+**API**: Jamendo API for song data
 **Authentication**: JSON Web Tokens (JWT)
 
 ## License
