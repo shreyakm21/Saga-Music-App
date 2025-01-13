@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="/frontend/public/assets/styles/dashboard.css">
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <!--<h1>🎵 Music App</h1>-->
+      <img src="assets/images/logo.png" style="height: 70px; border-radius: 50%;" alt="Music App Logo">
+      <h1 style="margin-top: 10px; font-family: cursive; font-size: 25px;">SAGA</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="profile.html" id="view-profile">Profile</a></li>
+        <li><a href="playlist.html" id="create-playlist">Create Playlist</a></li>
+        <li><a href="#" id="logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h2 id="typewriter">Welcome, <span id="username"></span>!</h2>
+      <p>Explore music, create playlists, and personalize your experience.</p>
+    </section>
+
+    <section class="playlists" id="playlists-section">
+      <h3>Your Playlists</h3>
+      <div id="playlists-container"></div>
+    </section>
+
+    <section class="user-profile" id="profile-section">
+      <h3>Your Profile</h3>
+      <div id="profile-info">
+        <div class="avatar">
+          <img id="avatar" src="default-avatar.png" alt="User Avatar" style="height: 200px;">
+        </div>
+        <div class="info">
+          <p><strong>Name:</strong> <span id="name">Loading...</span></p>
+          <p><strong>Date of Birth:</strong> <span id="dob">Loading...</span></p>
+          <p><strong>Bio:</strong> <span id="bio">Loading...</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Music App. All rights reserved.</p>
+  </footer>
+</body>
+</html>
