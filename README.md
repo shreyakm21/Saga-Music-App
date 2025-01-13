@@ -21,5 +21,3 @@ Saga Music App is a modern music application that allows users to explore, liste
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-## Contact
-For any inquiries or feedback, please contact Your Name.
