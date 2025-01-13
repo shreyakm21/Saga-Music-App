@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to SAGA</title>
+  <!-- <link rel="stylesheet" href="styles.css">-->
+  <style>
+    /* Add styles here for the logo and name */
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #021c08, #058821);
+    }
+
+    /* Logo container styles */
+    .logo-container {
+    text-align: center;
+    color: #ffffff; /* White text to contrast with dark background */
+    opacity: 0; /* Start with opacity 0 for fade-in effect */
+    transform: translateY(20px); /* Start slightly below for smooth upward transition */
+    transition: opacity 1s ease-in, transform 1s ease-in; /* Transition for both opacity and position */
+    }
+
+    /* Logo image styles */
+    .logo-container img {
+    width: 250px; /* Adjust logo size to be bigger */
+    height: 250px; /* Keep the aspect ratio */
+    border-radius: 50%; /* Circular shape */
+    border: 2px solid #e3e9e6;
+    object-fit: cover; /* Ensures image covers the area properly without distortion */
+    margin-bottom: 20px;
+    box-shadow: 20px 12px 20px rgba(1, 1, 1, 1); /* Adds shadow for a 3D effect */
+    opacity: 0; /* Initially invisible */
+    transform: scale(0.5); /* Start with smaller scale */
+    transition: opacity 1s ease-in, transform 1s ease-in; /* Smooth transition */
+    }
+
+    /* Logo name styles */
+    .logo-name {
+    font-family: 'Montserrat', sans-serif; /* Attractive, modern font family */
+    font-size: 5em; /* Make the name large */
+    color: #6ea20d; /* Golden color for logo name */
+    letter-spacing: 4px;
+    font-weight: bold;
+    text-shadow: 10px 3px 8px rgba(0, 0, 0, 1);
+    opacity: 0; /* Initially invisible */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 1s ease-in 0.5s, transform 1s ease-in 0.5s; /* Delay for the name's fade-in */
+    }
+
+    /* On page load, apply the transition */
+    body.loaded .logo-container {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to its original position */
+    }
+
+    body.loaded .logo-container img {
+    opacity: 1; /* Logo image becomes visible */
+    transform: scale(1); /* Scale to normal size */
+    }
+
+    body.loaded .logo-name {
+    opacity: 1; /* Logo name becomes visible */
+    transform: translateY(0); /* Move the logo name to its original position */
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="logo-container">
+    <img src="assets/images/logo.png" alt="Music App Logo">
+    <div class="logo-name">SAGA</div>
+  </div>
+
+  <script>
+    // When the page is loaded
+    window.addEventListener('load', function() {
+    // Add the class 'loaded' to the body to trigger the transition
+    document.body.classList.add('loaded');
+    });
+
+    setTimeout(() => {
+      window.location.href = "dashboard.html";  // After 2 seconds, redirect to dashboard
+    }, 2000);
+  </script>
+
+</body>
+</html>

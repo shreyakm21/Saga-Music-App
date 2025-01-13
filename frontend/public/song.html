@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Song</title>
+    <link rel="stylesheet" href="assets/styles/song.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Add a New Song</h1>
+            <button class="back-to-dashboard" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+        </header>
+
+        <form id="add-song-form" enctype="multipart/form-data">
+            <label for="song-name">Song Name</label>
+            <input type="text" id="song-name" name="name" placeholder="Enter song name" required>
+
+            <label for="artist-name">Artist Name</label>
+            <input type="text" id="artist-name" name="artist" placeholder="Enter artist name" required>
+
+            <label for="song-duration">Duration (in seconds)</label>
+            <input type="number" id="song-duration" name="duration" placeholder="Enter duration" required>
+
+            <label for="song-image">Song Image</label>
+            <input type="file" id="song-image" name="image" accept="image/*" required>
+
+            <label for="song-audio">Song Audio</label>
+            <input type="file" id="song-audio" name="audio" accept="audio/*" required>
+
+            <button type="submit" class="submit-button">Add Song</button>
+        </form>
+    </div>
+    <script src="js/song.js"></script>
+</body>
+</html>

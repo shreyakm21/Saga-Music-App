@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | Music App</title>
+  <link rel="stylesheet" href="assets/styles/guest.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="assets/images/logo.png" style="height: 50px;" alt="Music App Logo">
+        <h1 style="margin-top: 10px; font-family: cursive; font-size: 25px;">SAGA</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#explore">Explore</a></li>
+        <li><a href="#artists">Artists</a></li>
+        <li><a href="login.html" class="button" >Sign Up / Log In</a></li>
+        <li><a href="#search"><i class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Welcome to Music App</h1>
+      <p>Discover endless tracks, playlists, and artists.</p>
+      <div class="cta-buttons">
+        <a href="#explore" class="btn btn-primary">Start Listening</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Music -->
+  <section id="featured-music">
+    <h2>Featured Music</h2>
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="assets/images/album1.jpg" alt="Album 1">
+        <p>Top Hits</p>
+      </div>
+      <div class="carousel-item">
+        <img src="assets/images/album2.jpg" alt="Album 2">
+        <p>New Releases</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Benefits -->
+  <section id="app-benefits">
+    <h2>Why Choose Music App?</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="assets/images/feature1.png" alt="Feature 1">
+        <h3>Endless Music</h3>
+        <p>Access millions of songs, anytime, anywhere.</p>
+      </div>
+      <div class="feature">
+        <img src="assets/images/feature2.png" alt="Feature 2">
+        <h3>Custom Playlists</h3>
+        <p>Create your personal playlists and share them.</p>
+      </div>
+      <div class="feature">
+        <img src="assets/images/feature3.png" alt="Feature 3">
+        <h3>Discover New Music</h3>
+        <p>Personalized music recommendations just for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#privacy-policy">Privacy Policy</a>
+      <a href="#terms">Terms & Conditions</a>
+      <a href="#contact-us">Contact Us</a>
+    </div>
+    <br>
+    <div class="social-media">
+      <a href="https://instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="https://twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+    <br>
+    <p>© 2024 Music App. All rights reserved.</p>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Sign Up / Log In</h2>
+      <form>
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="btn">Log In</button>
+        <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/guest.js"></script>
+</body>
+</html>

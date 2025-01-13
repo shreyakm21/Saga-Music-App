@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Playlist</title>
+  <script src="https://kit.fontawesome.com/7cc81ca99c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/styles/playlist.css">
+  
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="dashboard.html">← Back to Dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="create-playlist">
+      <h1>Create New Playlist</h1>
+      <form id="create-playlist-form">
+        <label for="name">Playlist Name:</label>
+        <input type="text" id="playlist-name" name="name" required><br>
+      
+        <label for="description">Description:</label>
+        <textarea id="playlist-description" name="description" required></textarea><br>
+      
+        <label for="image">Playlist Image:</label>
+        <input type="file" id="playlist-image" name="image" required><br>
+      
+        <button type="submit">Create Playlist</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p style="text-align: center;">&copy; 2024 Music App. All rights reserved.</p>
+  </footer>
+  <script src="js/playlist.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playlist Details</title>
+  <script src="https://kit.fontawesome.com/7cc81ca99c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/styles/pd.css">
+</head>
+<body>
+  <div id="playlist-details">
+    <a href="dashboard.html" id="home-btn">
+      <i class="fa-solid fa-home"></i>
+    </a>
+    <h1 id="playlist-name"></h1>
+    <img id="playlist-image" alt="Playlist Image"  style="height: 200px; width: 200px;"/>
+    <p id="playlist-description"></p>
+    <p><strong>Number of Songs:</strong> <span id="song-count">0</span></p>
+    
+    <h2>Songs</h2>
+    <table id="songs-table">
+      <thead>
+        <tr>
+          <th>Song Name</th>
+          <th>Artist</th>
+          <th>Duration</th>
+          <th>Action</th> <!-- Add a column for the delete button -->
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    
+    <!--<button id="back-button">Back to Dashboard</button>-->
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const token = localStorage.getItem('authToken');
+      if (!token) {
+        alert('You are not logged in!');
+        window.location.href = 'login.html'; // Redirect to login if no token found
+        return;
+      }
+
+      const playlistId = new URLSearchParams(window.location.search).get('id');
+      if (!playlistId) {
+        alert('Playlist ID not found');
+        window.location.href = 'dashboard.html'; // Redirect back if no playlist ID
+        return;
+      }
+
+      try {
+        // Fetch playlist details by ID
+        const response = await fetch(`http://localhost:3000/playlists/${playlistId}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to load playlist details');
+        }
+
+        const { playlist } = await response.json();
+
+        // Set playlist data in the UI
+        document.getElementById('playlist-name').textContent = playlist.name;
+        document.getElementById('playlist-image').src = `http://localhost:3000${playlist.imagePath}`;
+        document.getElementById('playlist-description').textContent = playlist.description;
+        document.getElementById('song-count').textContent = playlist.songCount;
+
+        // Display songs in the table
+        const songsTableBody = document.getElementById('songs-table').getElementsByTagName('tbody')[0];
+        playlist.songs.forEach(song => {
+          const row = songsTableBody.insertRow();
+          row.innerHTML = `
+            <td>${song.name}</td>
+            <td>${song.artist}</td>
+            <td>${song.duration}</td>
+            <td><button class="delete-btn" data-song-id="${song.id}">Delete</button></td> 
+          `;
+        });
+
+        // Add event listener for the delete buttons
+        document.querySelectorAll('.delete-btn').forEach(button => {
+          button.addEventListener('click', async (e) => {
+            const songId = e.target.getAttribute('data-song-id');
+            const playlistId = new URLSearchParams(window.location.search).get('id');
+
+            // Confirm before deleting
+            if (confirm('Are you sure you want to delete this song?')) {
+              try {
+                // Call backend to delete the song from the playlist
+                const deleteResponse = await fetch(`http://localhost:3000/playlists/${playlistId}/songs/${songId}`, {
+                  method: 'DELETE',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                  }
+                });
+
+                if (!deleteResponse.ok) {
+                  throw new Error('Failed to delete song');
+                }
+
+                // Remove the row from the table
+                e.target.closest('tr').remove();
+                // Update song count
+                const songCount = document.getElementById('song-count');
+                songCount.textContent = parseInt(songCount.textContent) - 1;
+              } catch (error) {
+                console.error('Error deleting song:', error);
+                alert('Failed to delete the song');
+              }
+            }
+          });
+        });
+
+        // Add event listener for the back button
+        /*document.getElementById('back-button').addEventListener('click', () => {
+          window.location.href = 'dashboard.html'; // Redirect to dashboard
+        });*/
+      } catch (error) {
+        console.error('Error fetching playlist details:', error);
+        alert('Failed to load playlist details');
+      }
+    });
+  </script>
+</body>
+</html>

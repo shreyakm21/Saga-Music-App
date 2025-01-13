@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <script src="https://kit.fontawesome.com/7cc81ca99c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/styles/player.css">
+</head>
+<body>
+  <div class="player-container">
+    <!-- Home Button to Navigate to Dashboard -->
+    <a href="dashboard.html" id="home-btn">
+      <i class="fa-solid fa-home"></i>
+    </a>
+    
+    <h2 style="font-family: 'Courier New', Courier, monospace;">Now Playing.....</h2>
+    <div id="song-card-container">
+      <div class="song-card active" style="background: rgb(2, 106, 28);">
+        <img id="song-image" src="placeholder.jpg" alt="Album Cover">
+        <p id="song-title" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px; font-weight: 300;">Song Title</p>
+        <small id="song-artist" style="font-family: cursive;">Artist Name</small>
+      </div>
+    </div>
+    <div class="progress-bar-container">
+      <input type="range" id="progress-bar" min="0" max="100" value="0">
+    </div>
+    <span id="duration" style="font-family: 'Montserrat', sans-serif;">00:00 / 00:00</span>
+    <div class="controls">
+      <button id="prev-btn"><i class="fa-solid fa-backward"></i></button>
+      <button id="play-btn"><i class="fa-solid fa-play"></i></button>
+      <button id="next-btn"><i class="fa-solid fa-forward"></i></button>
+    </div>
+  </div>
+  <script src="js/player.js"></script>
+</body>
+</html>

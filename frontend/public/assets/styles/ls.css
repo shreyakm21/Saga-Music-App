@@ -1,0 +1,170 @@
+/* General body styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #013105, #06a433);
+  color: #333;
+}
+
+/* App Header Styles */
+.app-header {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Logo Styles */
+.app-logo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Glowing Text Effect */
+.app-name {
+  font-size: 2.5em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s infinite alternate;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Form container styles */
+.form-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading styles */
+.form-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input styles */
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input focus effect */
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Button styles */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #011302, #046d1b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background: linear-gradient(135deg, #0056b3, #003f7f);
+  transform: translateY(-2px);
+}
+
+/* Button active effect */
+button:active {
+  transform: translateY(0);
+}
+
+/* Message paragraph */
+p {
+  color: #e74c3c;
+  margin-top: 10px;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+/* Link styles */
+a {
+  display: block;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+/* Link hover effect */
+a:hover {
+  color: #0056b3;
+}
+
+/* Glow animation for text */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 126, 95, 0.4);
+  }
+  to {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 126, 95, 0.6);
+  }
+}
+
+/* Pulse animation for logo */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
